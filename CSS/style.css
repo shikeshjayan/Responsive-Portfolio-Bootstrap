@@ -1,0 +1,307 @@
+/* Define Variable */
+:root {
+  /* Colours */
+
+  --color-primary: #007bff;
+  --color-secondary: #2f4f4f;
+  --color-accent: #ff4081;
+  --color-background: #ffffff;
+  --color-nav-background: #d4a373;
+  --color-text: #212121;
+  --color-text-light: #ffffff;
+
+  /* Fonts */
+  --font-family-base: "Poppins", sans-serif;
+  --font-family-heading: "Roboto", sans-serif;
+  --font-family-branding: "Style Script", cursive;
+
+  --font-size-small: 0.5vw;
+  --font-size-base: 1vw;
+  --font-size-large: 1.5vw;
+  --font-size-xl: 2vw;
+
+  --line-height-base: 1.5;
+
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+/* ==== Header Section ==== */
+/* 
+ # Styles for header, including navigation and branding
+*/
+.navigation-bar {
+  position: fixed;
+  background-color: var(--color-nav-background);
+  min-height: 4rem;
+  padding: 0.5rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  z-index: 10;
+}
+/* Stylling Brand Name */
+.navbar-brand {
+  font-family: var(--font-family-branding);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Navigation links styling */
+.contact-btn {
+  min-width: 5rem;
+  min-height: 2rem;
+  background: transparent;
+  color: var(--color-text-light);
+  transition: color 0.4s linear;
+  cursor: pointer;
+  position: relative;
+  border: none;
+}
+.contact-btn:hover {
+  color: #ffffff;
+}
+.contact-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* background: #0044c2; */
+  border-bottom: 2px solid blue;
+  z-index: -1;
+  transition: transform 0.5s;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+}
+.contact-btn::before {
+  transform: scaleX(0);
+}
+.contact-btn:hover::before {
+  transform: scaleY(1);
+}
+/* ==== Hero Section ==== */
+.hero-section {
+  background-image: url("../images/wallaper.jpg");
+  background-color: var(--color-background);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+/* Styling Hero Headings */
+.main-head {
+  color: var(--color-text-light);
+  font-size: clamp(
+    calc(var(--font-size-base) + 2vw),
+    calc(var(--font-size-large) + 6vw),
+    calc(var(--font-size-xl) + 6vw)
+  );
+  opacity: 0;
+  transform: translateY(0px);
+  animation: fadeIn ease-in 3s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+}
+.sub-head {
+  color: var(--color-text-light);
+  font-weight: 100;
+  font-size: clamp(2vw, 6vw, 6rem);
+  opacity: 0;
+  transform: translateY(0px);
+  animation: fadeIn ease-in 3s;
+  animation-fill-mode: forwards;
+}
+/* ==== Header Section^==== */
+/* ----------------------- */
+/* ==== About Section ==== */
+
+.about-section {
+  background-color: var(--color-secondary);
+  width: 100vw;
+  max-width: 100vw;
+  padding: 4rem 4rem;
+}
+
+/* Stylling About Me Text */
+
+.about-me {
+  color: var(--color-text-light);
+  font-weight: 800;
+  font-size: clamp(2vw, 7vw, 6rem);
+}
+.my-name {
+  color: var(--color-text-light);
+  font-size: 3vw;
+}
+.about-description {
+  color: var(--color-text-light);
+  max-width: 28rem;
+}
+
+/* Styling & Animations for Social Icons in About Me Section */
+
+.skill-icons > ul {
+  background-color: rgb(255, 255, 255, 0.5);
+  border-radius: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+.skill-icons > ul > li > img {
+  width: 50px;
+  height: 50px;
+  animation: floatIcons 6s ease-in-out infinite;
+}
+@keyframes floatIcons {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Stylling & Animations for Profile Picture in About Me Section */
+
+.img-fluid {
+  margin-top: 1rem;
+  max-width: 500px;
+  max-height: 700px;
+  border-radius: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+  animation: floatImage 6s ease-in-out infinite;
+}
+@keyframes floatImage {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+/* ==== About Section^==== */
+/* ---------------------- */
+/* ====Services Section==== */
+
+.service-section {
+  background-color: var(--color-secondary);
+  width: 100vw;
+  max-width: 100vw;
+  padding: 4rem 4rem;
+}
+
+.service-section > h1 {
+  color: var(--color-text-light);
+  font-weight: 800;
+  font-size: clamp(2vw, 7vw, 6rem);
+  padding: 0 0 0 4rem;
+}
+.row {
+  padding: 4rem;
+}
+.card {
+  height: 100%;
+}
+.card > img {
+  width: 50px;
+  height: 50px;
+}
+.btn > img {
+  width: 20px;
+  height: auto;
+}
+/* ==== Services Section^==== */
+/* ------------------------- */
+/* ==== Project Section ==== */
+.project-section {
+  background-color: var(--color-secondary);
+  width: 100%;
+  max-width: 100vw;
+  padding: 4rem 4rem;
+}
+.project-section > h1 {
+  color: var(--color-text-light);
+  font-weight: 800;
+  font-size: clamp(2vw, 7vw, 6rem);
+  padding: 0 0 0 4rem;
+}
+
+.card {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeUp 3s ease forwards;
+}
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+/* ==== Project Section^==== */
+/* ------------------------- */
+/* ==== Contact Section ==== */
+.contact-section {
+  background-color: var(--color-secondary);
+  width: 100%;
+  max-width: 100vw;
+  padding: 4rem 4rem;
+}
+.contact-form {
+  max-width: 30rem;
+  height: auto;
+}
+.inner-container {
+  width: 100%;
+  background-color: rgb(255, 255, 255, 0.8);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.getintouch {
+  max-width: 30rem;
+  height: auto;
+}
+.getintouch > h2 {
+  color: var(--color-text);
+  font-weight: 800;
+  font-size: clamp(3vw, 3vw, 6rem);
+  padding: 0 0 0 4rem;
+}
+.getintouch > p {
+  max-width: 25rem;
+  color: var(--color-text);
+  padding: 0 0 0 4rem;
+}
+.social-icons > ul {
+  padding: 4rem 0 0 4rem;
+  display: flex;
+  gap: 2rem;
+}
+.social-icons > ul > li {
+  list-style: none;
+}
+.social-icons > ul > li > a {
+  text-decoration: none;
+}
