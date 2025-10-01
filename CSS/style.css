@@ -1,4 +1,5 @@
-/* Define Variable */
+/* Declaring Variable */
+
 :root {
   /* Colours */
 
@@ -6,7 +7,7 @@
   --color-secondary: #2f4f4f;
   --color-accent: #ff4081;
   --color-background: #ffffff;
-  --color-nav-background: #d4a373;
+  --color-nav-background: #1e201e;
   --color-text: #212121;
   --color-text-light: #ffffff;
 
@@ -27,11 +28,13 @@
 }
 
 /* Global Styles */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 html,
 body {
   margin: 0;
@@ -39,10 +42,25 @@ body {
   width: 100%;
   overflow-x: hidden;
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #2c2f2c;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #1e201e;
+  border-radius: 10px;
+  border: 3px solid #2c2f2c;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #e07b39;
+}
 /* ==== Header Section ==== */
 /* 
  # Styles for header, including navigation and branding
 */
+
 .navigation-bar {
   position: fixed;
   background-color: var(--color-nav-background);
@@ -51,14 +69,21 @@ body {
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   z-index: 10;
 }
+
 /* Stylling Brand Name */
+
 .navbar-brand {
   font-family: var(--font-family-branding);
   font-weight: var(--font-weight-bold);
 }
+.navbar-brand:hover {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+    0 0 10px rgba(255, 255, 255, 0.5);
+}
 
 /* Navigation links styling */
-.contact-btn {
+
+.nav-link {
   min-width: 5rem;
   min-height: 2rem;
   background: transparent;
@@ -68,30 +93,33 @@ body {
   position: relative;
   border: none;
 }
-.contact-btn:hover {
+.nav-link:hover {
   color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+    0 0 10px rgba(255, 255, 255, 0.5);
 }
-.contact-btn::before {
+.nav-link::before {
   content: "";
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  /* background: #0044c2; */
-  border-bottom: 2px solid blue;
+  border-bottom: 2px solid rgb(255, 255, 255);
   z-index: -1;
   transition: transform 0.5s;
   transform-origin: 0 0;
   transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
 }
-.contact-btn::before {
+.nav-link::before {
   transform: scaleX(0);
 }
-.contact-btn:hover::before {
+.nav-link:hover::before {
   transform: scaleY(1);
 }
+
 /* ==== Hero Section ==== */
+
 .hero-section {
   background-image: url("../images/wallaper.jpg");
   background-color: var(--color-background);
@@ -100,7 +128,9 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
+
 /* Styling Hero Headings */
+
 .main-head {
   color: var(--color-text-light);
   font-size: clamp(
@@ -108,15 +138,21 @@ body {
     calc(var(--font-size-large) + 6vw),
     calc(var(--font-size-xl) + 6vw)
   );
+
   opacity: 0;
   transform: translateY(0px);
   animation: fadeIn ease-in 3s;
   animation-fill-mode: forwards;
 }
+
+/* Animation for class="main-head" and class="sub-head" */
+
 @keyframes fadeIn {
   to {
     opacity: 1;
     transform: translateY(-10px);
+
+    text-shadow: 0 0 10px #ffffff;
   }
 }
 .sub-head {
@@ -128,6 +164,7 @@ body {
   animation: fadeIn ease-in 3s;
   animation-fill-mode: forwards;
 }
+
 /* ==== Header Section^==== */
 /* ----------------------- */
 /* ==== About Section ==== */
@@ -191,6 +228,9 @@ body {
 
   animation: floatImage 6s ease-in-out infinite;
 }
+
+/* Animation for Class="img-fluid" */
+
 @keyframes floatImage {
   0% {
     transform: translateY(0px);
@@ -202,6 +242,7 @@ body {
     transform: translateY(0px);
   }
 }
+
 /* ==== About Section^==== */
 /* ---------------------- */
 /* ====Services Section==== */
@@ -233,9 +274,11 @@ body {
   width: 20px;
   height: auto;
 }
+
 /* ==== Services Section^==== */
 /* ------------------------- */
 /* ==== Project Section ==== */
+
 .project-section {
   background-color: var(--color-secondary);
   width: 100%;
@@ -254,16 +297,22 @@ body {
   opacity: 0;
   transform: translateY(-20px);
   animation: fadeUp 3s ease forwards;
+  animation-delay: 2s;
 }
+
+/* Animation for class="Card" */
+
 @keyframes fadeUp {
   to {
     opacity: 1;
     transform: translateY(0px);
   }
 }
+
 /* ==== Project Section^==== */
 /* ------------------------- */
 /* ==== Contact Section ==== */
+
 .contact-section {
   background-color: var(--color-secondary);
   width: 100%;
@@ -273,6 +322,12 @@ body {
 .contact-form {
   max-width: 30rem;
   height: auto;
+}
+.contact-form > h1 {
+  text-transform: uppercase;
+  color: var(--color-text);
+  font-weight: 800;
+  font-size: clamp(5vw, 3vw, 6rem);
 }
 .inner-container {
   width: 100%;
@@ -286,17 +341,18 @@ body {
 .getintouch > h2 {
   color: var(--color-text);
   font-weight: 800;
-  font-size: clamp(3vw, 3vw, 6rem);
-  padding: 0 0 0 4rem;
+  font-size: clamp(3vw, 4vw, 6rem);
 }
 .getintouch > p {
   max-width: 25rem;
   color: var(--color-text);
-  padding: 0 0 0 4rem;
 }
 .social-icons > ul {
-  padding: 4rem 0 0 4rem;
+  max-width: 20rem;
+  overflow-x: hidden;
+  padding: 4rem 0 0 0;
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 .social-icons > ul > li {
@@ -305,3 +361,63 @@ body {
 .social-icons > ul > li > a {
   text-decoration: none;
 }
+.social-icons > ul > li > a > img {
+  width: 2rem;
+  height: auto;
+}
+
+/* ==== Contact Section^ ==== */
+/* ------------------------- */
+/* ==== Footer Section ==== */
+
+.footer-section {
+  background-color: var(--color-nav-background);
+  color: var(--color-text-light);
+}
+.brand-footer {
+  font-family: var(--font-family-branding);
+  height: 3rem;
+  font-size: 2.5vw;
+}
+.description-footer {
+  font-family: var(--font-family-base);
+  font-size: 1vw;
+}
+.footer-links > li {
+  list-style: none;
+}
+.footer-links > li > a {
+  color: var(--color-text-light);
+  text-decoration: none !important;
+  font-family: var(--font-family-base);
+  font-size: 1vw;
+}
+.copyright li {
+  list-style-type: none;
+}
+.social_icons-footer > li {
+  list-style: none;
+}
+.social_icons-footer > li > a {
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-family: var(--font-family-base);
+}
+.social_icons-footer > li > a > img {
+  width: 32px;
+  height: auto;
+}
+
+/* ==== Footer Section^==== */
+/* ----------------------- */
+/* Media Query for Footer Section */
+
+@media all and (max-width: 768px) {
+  .footer-section {
+    display: none;
+  }
+}
+
+/* ******************************** */
+
+/* Stylling Completed */

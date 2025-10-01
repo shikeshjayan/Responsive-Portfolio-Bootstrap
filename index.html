@@ -25,7 +25,7 @@
 </head>
 
 <body>
-
+    <!-- ==== Navigation-Bar ==== -->
     <header class="navigation-bar container-fluid mw-100">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
@@ -53,24 +53,24 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="#contact"><button
-                                    class="contact-btn">Contact</button></a>
+                            <a class="nav-link text-light" href="#contact">Contact</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+    <!-- ==== Navigation-Bar^ ==== -->
     <main>
-        <!-- Hero-Section -->
+        <!-- ==== Hero-Section ==== -->
         <section
             class="hero-section container-fluid d-flex flex-column align-items-center justify-content-center min-vh-100 w-100">
             <h1 class="main-head text-uppercase">Shikesh Jayan</h1>
             <p class="sub-head text-uppercase">Full stack web developer</p>
         </section>
-        <!-- Hero-Section^ -->
-        <!-- ------------ -->
-        <!-- About-Section -->
+        <!-- ==== Hero-Section^ ==== -->
+        <!-- ----------------------- -->
+        <!-- ==== About-Section ==== -->
         <section id="about" class="about-section container-fluid min-vh-100 w-100">
             <div class="row align-items-center">
                 <div class="col-sm-12 col-md-6 d-flex flex-column justify-content-center align-items-start">
@@ -105,9 +105,9 @@
                     <img src="images/profilepic.png" alt="" class="img-fluid shadow">
                 </div>
         </section>
-        <!-- About-Section^ -->
-        <!-- -------------- -->
-        <!-- Service-Section -->
+        <!-- ==== About-Section^ ==== -->
+        <!-- ------------------------ -->
+        <!-- ==== Service-Section ==== -->
         <section id="services" class="service-section container-fluid min-vh-100 w-100">
             <h1 class="text-uppercase">What I Offer</h1>
             <div class="row container-fluid d-flex align-items-center">
@@ -199,9 +199,9 @@
             </div>
 
         </section>
-        <!-- Service-Section^-->
-        <!-- --------------- -->
-        <!-- Project-Section -->
+        <!-- ==== Service-Section^ ====-->
+        <!-- ------------------------- -->
+        <!-- ==== Project-Section ==== -->
         <section id="projects" class="project-section container-fluid min-vh-100 w-100">
             <h1 class="text-uppercase">Projects</h1>
             <div class="row g-3 container-fluid">
@@ -246,7 +246,8 @@
                                 structures for displaying posts and categories. The project replicates how a live
                                 blogging service appears and operates, with static content and mock data powering the
                                 user interface.</p>
-                            <a href="#projects" class="btn btn-primary w-100">HTML5 • CSS3 Tailwind • JavaScript React</a>
+                            <a href="#projects" class="btn btn-primary w-100">HTML5 • CSS3 Tailwind • JavaScript
+                                React</a>
                         </div>
                     </div>
                 </div>
@@ -269,19 +270,25 @@
                 </div>
             </div>
         </section>
-        <!-- Contact-Section -->
+        <!-- ====Project-Section^==== -->
+        <!-- ----------------------- -->
+        <!-- ==== Contact-Section ==== -->
         <section id="contact"
             class="contact-section container-fluid min-vh-100 w-100 d-flex flex-column justify-content-center align-items-center">
             <div class="row inner-container container rounded d-flex justify-content-center">
                 <div class="getintouch col-sm-12 col-md-12 col-lg-6">
                     <h2>Get in Touch</h2>
                     <p>Thanks for reaching out! I appreciate your message and will get back to you soon.</p>
-                    <div class="social-icons">
+                    <div class="social-icons container-fluid flex-wrap">
                         <ul>
-                            <li><a href=""><img src="images/instagram.png" alt=""></a></li>
-                            <li><a href="">facebook</a></li>
-                            <li><a href="">Github</a></li>
-                            <li><a href="">LinkedIn</a></li>
+                            <li><a href="http://www.instagram.com" target="_blank"><img src="images/instagram.png"
+                                        alt="Icon of instagram"></a></li>
+                            <li><a href="http://www.facebook.com" target="_blank"><img src="images/facebook.png"
+                                        alt="Icon of facebook"></a></li>
+                            <li><a href="http://www.github.com" target="_blank"><img src="images/github.png"
+                                        alt="Icon of github"></a></li>
+                            <li><a href="http://www.linkedin.com" target="_blank"><img src="images/linkedin.png"
+                                        alt="Icon of linkedin"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -290,25 +297,67 @@
                         <h1>Contact</h1>
                         <div class="mb-3">
                             <label for="exampleInputName" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="exampleInputName" aria-describedby="enterName">
+                            <input type="text" class="form-control" id="exampleInputName" aria-describedby="enterName"
+                                minlength="3" maxlength="20" required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail">
+                            <input type="email" class="form-control" id="exampleInputEmail" minlength="10"
+                                maxlength="25" required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputMessage" class="form-label">Message</label>
-                            <input type="text" class="form-control" id="exampleInputMessage">
+                            <input type="text" class="form-control" id="exampleInputMessage" minlength="30"
+                                maxlength="150" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-primary">Reset</button>
                     </form>
                 </div>
             </div>
         </section>
-
     </main>
-
-
+    <!-- ==== Contact-Section^ ==== -->
+    <!-- ------------------------ -->
+    <!-- ==== Footer-Section ==== -->
+    <footer class="footer-section container-fluid">
+        <div class="row">
+            <div class="col">
+                <h1 class="brand-footer">Shikesh Jayan</h1>
+                <p class="description-footer">Let's build something great together!</p>
+            </div>
+            <div class="col container-fluid d-flex flex-column align-items-center justify-content-center">
+                <ul class="d-flex gap-3 footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>
+                        <p>© 2025 Shikesh Jayan. All rights reserved.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col">
+                <ul class="social_icons-footer d-flex gap-5 align-items-center justify-content-center">
+                    <li>
+                        <a href="https://web.whatsapp.com/" target="_blank"><img src="images/whatsapp.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="http://www.x.com" target="_blank"><img src="images/x.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="http://www.youtube.com" target="_blank"><img src="images/youtube.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="http://www.behance.com" target="_blank"><img src="images/behance.png" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 
 
 
